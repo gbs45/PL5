@@ -60,19 +60,27 @@ public class Homepage {
 		JLabel lblNewLabel_1 = new JLabel("File: ");
 		lblNewLabel_1.setBounds(33, 133, 61, 16);
 		frame.getContentPane().add(lblNewLabel_1);
-		
-		JFileChooser chooser = new JFileChooser("Open");
-		chooser.setBounds(119, 119, 202, 41);
-		frame.getContentPane().add(chooser);
-		
-		JButton btnNewButton = new JButton("Open");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+
+                JButton fileButton = new JButton("Select File");
+		fileButton.setBounds(167, 208, 117, 41);
+                fileButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+				JFileChooser chooser = new JFileChooser();//"Open");
+				chooser.showOpenDialog(null);
+				chooser.setBounds(119, 119, 202, 41);
+				frame.getContentPane().add(chooser);
 			}
 		});
-		btnNewButton.setBounds(167, 208, 117, 41);
-		frame.getContentPane().add(btnNewButton);
+
+		frame.getContentPane().add(fileButton);
+		
+		/*JButton btnNewButton = new JButton("Open");
+		//btnNewButton.addActionListener(new ActionListener() {
+			//public void actionPerformed(ActionEvent e) {
+			//}
+		//});
+		//btnNewButton.setBounds(167, 208, 117, 41);
+		//frame.getContentPane().add(btnNewButton);*/
 		
 	}
 }
-
